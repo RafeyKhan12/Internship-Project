@@ -1,0 +1,10 @@
+# Streamlit app (original MVP)
+streamlit
+requests
+pytesseract
+pillow
+
+# FastAPI backend (for the Next.js frontend integration)
+fastapi
+uvicorn[standard]
+python-multipart

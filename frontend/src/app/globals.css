@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    background-color: theme("colors.accent");
+    color: theme("colors.bg");
+  }
+
+  /* Visible keyboard focus everywhere, in the brand accent. */
+  :focus-visible {
+    outline: 2px solid theme("colors.accent");
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* The signature "prescription label" texture: a dashed perforation
+     rule used once, at the top of the results panel, evoking a
+     pharmacy label being torn from a sheet. */
+  .label-perforation {
+    background-image: repeating-linear-gradient(
+      to right,
+      theme("colors.border") 0,
+      theme("colors.border") 6px,
+      transparent 6px,
+      transparent 12px
+    );
+    background-position: top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
